@@ -79,16 +79,9 @@ import {HeroService} from "./hero.service";
 export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.getHeroes()
-    this.getHeroesTemp()
   }
   title = 'Tour of Heroes';
   heroes: Hero[];
-
-  HEROESTEMP: Hero[] = [
-    { id: 55, name: "NOT HERO bad news bear"},
-    { id: 56, name: "NOT HERO mr smells"},
-    { id: 57, name: "NOT HERO really dumb"},
-  ]
 
   constructor (private heroService: HeroService){}
   selectedHero: Hero;
@@ -98,11 +91,7 @@ export class AppComponent implements OnInit {
   }
 
   getHeroes(): void {
-    this.heroService.getHeroesSlowly().then(heroes => this.heroes = heroes);
-  }
-
-  getHeroesTemp(): void {
-    this.heroes = this.HEROESTEMP;
+    this.heroService.getHeroes().then(heroes => this.heroes = heroes);
   }
 
 }
