@@ -7,7 +7,7 @@ import {Hero} from "./hero";
   template: `
 <h3>top heroes</h3>
 <div class="grid grid-pad">
-  <div *ngFor="let hero of heroes" class="col-1-4">
+  <div *ngFor="let hero of heroes" class="col-1-4" [routerLink]="['/detail', hero.id]" class="col-1-1-4">
     <div class="module hero">
       <h4>{{hero.name}}</h4>
     </div>
