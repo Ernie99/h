@@ -16,7 +16,7 @@ import {Hero} from "./hero";
 </div>
 `
 })
-export class DashComponent implements OnInit{
+export class DashboardComponent implements OnInit{
   heroes: Hero[] = [];
   constructor(private heroService: HeroService){
   }
