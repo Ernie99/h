@@ -83,7 +83,6 @@ export class AppComponent implements OnInit {
   title = 'Tour of Heroes';
   heroes: Hero[];
 
-
   constructor (private heroService: HeroService){}
   selectedHero: Hero;
 
@@ -92,7 +91,7 @@ export class AppComponent implements OnInit {
   }
 
   getHeroes(): void {
-    this.heroes = this.heroService.getHeroes();
+    this.heroService.getHeroes().then(heroes => this.heroes = heroes);
   }
 
 }
